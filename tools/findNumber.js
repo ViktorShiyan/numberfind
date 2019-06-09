@@ -1,5 +1,11 @@
 const fs = require('fs');
 
+/**
+ * Function find info about number
+ *
+ * @param number
+ * @return {{code: string, company: string, region: string}|null}
+ */
 function find(number) {
     const isFindedString = (str, number) => {
         const arr = str.split(';');
