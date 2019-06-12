@@ -28,7 +28,7 @@ function find(number) {
         }
     }
     const arrRes = currentString.split(';');
-    return {"code": arrRes[0], "company": arrRes[4], "region": arrRes[5]};
+    return {"number": number, "code": arrRes[0], "company": arrRes[4], "region": arrRes[5]};
 }
 
 module.exports.find = find;
