@@ -5,3 +5,9 @@ test('find number 9659755075', () => {
     const actual = findNum.find('9659725075');
     expect(exp).toStrictEqual(actual);
 });
+
+test('find  equal null', () => {
+    const exp = null;
+    const actual = findNum.find('9659725');
+    expect(exp).toStrictEqual(actual);
+});

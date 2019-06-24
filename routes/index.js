@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var findNum = require('../tools/findNumber');
 var findNumMore = require('../tools/findNumberMore');
+var findAll = require('../tools/findall');
 
 /**
  * Function return info about number
@@ -31,6 +32,24 @@ router.get('/find', (req, res) => {
  */
 router.get('/findmore', (req, res) => {
     const info = findNumMore.findNumMore(req.query.number);
+    if (info === null) {
+        res.status(400).end();
+    } else {
+        res.status(200);
+        res.json(info);
+    }
+});
+
+/**
+ * Function return info all numbers
+ *
+ * @name router_findmore
+ * @author ViktorShiyan
+ * @return {json} info about more numbers
+ *
+ */
+router.get('/findalls', (req, res) => {
+    const info = findAll.findAll();
     if (info === null) {
         res.status(400).end();
     } else {
